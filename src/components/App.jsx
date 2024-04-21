@@ -1,17 +1,38 @@
-import { useState } from 'react';
 import { myStore } from '../../store';
 import { Provider } from 'react-redux';
+import { createBrowserRouter, Outlet } from 'react-router-dom';
+import Header from './Header';
+import Cart from './Cart';
 
 import Products from './Products';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <Provider store={myStore}>
-      <Products />
+      <Header />
+      <Outlet />
     </Provider>
   )
 }
 
-export default App
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    children: [
+      {
+        path: '/',
+        element: <Products />
+      },
+      {
+        path: '/cart',
+        element: <Cart />
+      }
+    ]
+  }
+])
+
+
+export default router;
