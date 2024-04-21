@@ -18,16 +18,16 @@ const productSlice = createSlice({
     name: 'product',
     initialState,
     reducers: {
-        addProduct: (state, action) => {
-            state.products.push(action.payload);
-        }
+
     },
     extraReducers: (builder) => {
         builder.addCase(fetchProductsAsync.fulfilled, (state, action) => {
             state.status = 'idle';
             state.products = action.payload;
+
+        }).addCase(fetchProductsAsync.pending, (state) => {
+            state.status = 'loading'
         })
-            .addCase(fetchProductsAsync.pending, (state) => state.status = 'loading')
     }
 });
 
