@@ -5,13 +5,13 @@ export function fetchItem() {
 };
 
 export function addItemToDB(item) {
-    return axios.post('http:localhost:8080/cart', item);
+    return axios.post('http://localhost:8080/cart', item);
 };
 
 export function removeItemFromDB(itemId) {
-    return axios.delete('http:localhost:8080/cart', itemId);
+    return axios.delete('http://localhost:8080/cart', itemId);
 };
 
 export function updateItem(itemId, item) {
-    return axios.patch(`http:localhost:8080/cart/${itemId}`, item);
+    return axios.patch(`http://localhost:8080/cart/${itemId}`, item);
 };
