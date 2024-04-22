@@ -24,7 +24,7 @@ export const addItemAsync = createAsyncThunk(
 
 export const updateItemAsync = createAsyncThunk(
     'cartItems/updateItem',
-    async (itemId, item) => {
+    async ({ itemId, item }) => {
         const { data } = await updateItem(itemId, item);
         return data;
     }
