@@ -9,7 +9,7 @@ export function addItemToDB(item) {
 };
 
 export function removeItemFromDB(itemId) {
-    return axios.delete('http://localhost:8080/cart', itemId);
+    return axios.delete(`http://localhost:8080/cart/${itemId}`);
 };
 
 export function updateItem(itemId, item) {
