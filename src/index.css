@@ -139,3 +139,13 @@ button:focus {
 .del-btn:focus-visible {
   background-color: darkred;
 }
+
+.total-price {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.qty-btn {
+  padding: 0.2rem 0.5rem;
+  margin-inline: 0.3rem;
+}
